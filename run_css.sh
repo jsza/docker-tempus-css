@@ -28,10 +28,6 @@ cd $TEMPUS_SM_PLUGINS_DIR
 git pull
 ln -f plugins/tempus_keypress.smx $SM_PLUGINS_DIR
 
-if [ ! -f "$SM_PLUGINS_DIR/updater.smx" ]; then
-    wget "https://bitbucket.org/GoD_Tony/updater/downloads/updater.smx" -P "$SM_PLUGINS_DIR"
-fi
-
 # while [ ! -f "$MAPS_DIR/tempus_map_updater_run_once" ]
 # do
 #     echo "Map updater has not completed. Retrying in 10 seconds..."
