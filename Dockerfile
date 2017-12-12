@@ -6,7 +6,6 @@ RUN pip install virtualenv \
     && python -m virtualenv /venv \
     && /venv/bin/pip install --no-cache-dir \
         https://github.com/jsza/getoverhere/zipball/master \
-        pyyaml
     && /venv/bin/pip install --upgrade --no-cache-dir \
         https://github.com/jsza/getoverhere/zipball/master
 RUN adduser --uid 5000 --disabled-password --gecos "" steam
