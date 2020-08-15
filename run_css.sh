@@ -27,6 +27,7 @@ fi
 cd $TEMPUS_SM_PLUGINS_DIR
 git pull
 ln -f plugins/tempus_keypress.smx $SM_PLUGINS_DIR
+ln -sf plugins/css_surf_plugins $SM_PLUGINS_DIR/surf
 
 # while [ ! -f "$MAPS_DIR/tempus_map_updater_run_once" ]
 # do
