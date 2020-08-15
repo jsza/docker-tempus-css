@@ -8,6 +8,7 @@ CUSTOM_DIR="$SERVER_DIR/cstrike/custom"
 TEMPUS_CUSTOM_DIR="$CUSTOM_DIR/tempus"
 MAPS_DIR="$TEMPUS_CUSTOM_DIR/maps"
 SP_PLUGINS_DIR="$ADDONS_DIR/source-python/plugins"
+AUSSURF_BLOCKER_MODEL_DIR="$CUSTOM_DIR/blocker"
 
 cd ~/steamcmd
 ./steamcmd.sh +runscript update_css.txt
@@ -22,6 +23,11 @@ fi
 if [ ! -d $TEMPUS_SM_PLUGINS_DIR ]; then
     mkdir $TEMPUS_SM_PLUGINS_DIR
     git clone https://bitbucket.org/jsza/tempus-sourcemod-plugins.git $TEMPUS_SM_PLUGINS_DIR
+fi
+
+if [ ! -d $AUSSURF_BLOCKER_MODEL_DIR ]; then
+    mkdir $AUSSURF_BLOCKER_MODEL_DIR
+    git clone https://github.com/jsza/aussurf-blocker-model.git $AUSSURF_BLOCKER_MODEL_DIR
 fi
 
 cd $TEMPUS_SM_PLUGINS_DIR
