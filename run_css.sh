@@ -14,7 +14,10 @@ cd ~/steamcmd
 ./steamcmd.sh +runscript update_css.txt
 
 cd $SERVER_DIR
-/venv/bin/goh -afi -sc ./cstrike metamod sourcemod stripper accelerator
+/venv/bin/goh -afi -sc ./cstrike metamod sourcemod stripper accelerator dhooks
+
+cs $SM_PLUGINS_DIR
+rm -f basetriggers.smx nextmap.smx
 
 if [ ! -d $MAPS_DIR ]; then
     mkdir -p $MAPS_DIR
