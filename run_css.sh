@@ -35,11 +35,11 @@ git pull
 ln -f plugins/tempus_keypress.smx $SM_PLUGINS_DIR
 ln -sf $TEMPUS_SM_PLUGINS_DIR/plugins/css_surf_plugins $SM_PLUGINS_DIR/surf
 
-#  while [ ! -f "$MAPS_DIR/tempus_map_updater_run_once" ]
-# do
-#     echo "Map updater has not completed. Retrying in 10 seconds..."
-#     sleep 10
-# done
+while [ ! -f "$MAPS_DIR/tempus_map_updater_run_once" ]
+do
+    echo "Map updater has not completed. Retrying in 10 seconds..."
+    sleep 10
+done
 
 cd $SERVER_DIR
 exec ./srcds_run -game cstrike $@
