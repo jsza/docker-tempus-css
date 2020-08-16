@@ -4,6 +4,7 @@ SERVER_DIR="/srv/srcds"
 ADDONS_DIR="$SERVER_DIR/cstrike/addons"
 SM_PLUGINS_DIR="$ADDONS_DIR/sourcemod/plugins"
 AUSSURF_SM_PLUGINS_REPO_DIR="$SM_PLUGINS_DIR/disabled/aussurf-sourcemod-plugins"
+AUSSURF_SM_PLUGINS_DIR="$SM_PLUGINS_DIR/aussurf_plugins"
 CUSTOM_DIR="$SERVER_DIR/cstrike/custom"
 TEMPUS_CUSTOM_DIR="$CUSTOM_DIR/tempus"
 MAPS_DIR="$TEMPUS_CUSTOM_DIR/maps"
@@ -30,7 +31,7 @@ fi
 
 cd $AUSSURF_SM_PLUGINS_REPO_DIR
 git pull
-ln --symbolic --force --no-target-directory "$AUSSURF_SM_PLUGINS_REPO_DIR/plugins/" $TEMPUS_SM_PLUGINS_DIR
+ln --symbolic --force --no-target-directory "$AUSSURF_SM_PLUGINS_REPO_DIR/plugins/" $AUSSURF_SM_PLUGINS_DIR
 
 for filename in plugins/*.smx; do
     rm -f "$SM_PLUGINS_DIR/$(basename $filename)"
