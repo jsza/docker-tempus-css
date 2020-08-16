@@ -23,21 +23,27 @@ if [ ! -d $MAPS_DIR ]; then
     mkdir -p $MAPS_DIR
 fi
 
-if [ ! -d $TEMPUS_SM_PLUGINS_DIR ]; then
-    mkdir $TEMPUS_SM_PLUGINS_DIR
-    git clone https://bitbucket.org/jsza/tempus-sourcemod-plugins.git $TEMPUS_SM_PLUGINS_DIR
+if [ ! -d $AUSSURF_SM_PLUGINS_REPO_DIR ]; then
+    mkdir $AUSSURF_SM_PLUGINS_REPO_DIR
+    git clone https://github.com/jsza/aussurf-sourcemod-plugins.git $AUSSURF_SM_PLUGINS_REPO_DIR
+fi
+
+cd $AUSSURF_SM_PLUGINS_REPO_DIR
+git pull
+ln --symbolic --force --no-target-directory "$AUSSURF_SM_PLUGINS_REPO_DIR/plugins/" $TEMPUS_SM_PLUGINS_DIR
+
+for filename in plugins/*.smx; do
+    rm -f "$SM_PLUGINS_DIR/$(basename $filename)"
+done
+
+if [ -d $AUSSURF_SM_PLUGINS_REPO_DIR/gamedata ]; then
+    ln --symbolic --force $AUSSURF_SM_PLUGINS_REPO_DIR/gamedata/* "$ADDONS_DIR/sourcemod/gamedata"
 fi
 
 if [ ! -d $AUSSURF_BLOCKER_MODEL_DIR ]; then
     mkdir $AUSSURF_BLOCKER_MODEL_DIR
     git clone https://github.com/jsza/aussurf-blocker-model.git $AUSSURF_BLOCKER_MODEL_DIR
 fi
-
-cd $TEMPUS_SM_PLUGINS_DIR
-git pull
-ln -f plugins/tempus_keypress.smx $SM_PLUGINS_DIR
-ln -sfT $TEMPUS_SM_PLUGINS_DIR/plugins/css_surf_plugins/plugins $SM_PLUGINS_DIR/surf
-ln -sf $TEMPUS_SM_PLUGINS_DIR/plugins/css_surf_plugins/gamedata/* $ADDONS_DIR/sourcemod/gamedata/
 
 while [ ! -f "$MAPS_DIR/tempus_map_updater_run_once" ]
 do
