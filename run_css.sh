@@ -3,7 +3,7 @@
 SERVER_DIR="/srv/srcds"
 ADDONS_DIR="$SERVER_DIR/cstrike/addons"
 SM_PLUGINS_DIR="$ADDONS_DIR/sourcemod/plugins"
-TEMPUS_SM_PLUGINS_DIR="$SM_PLUGINS_DIR/disabled/aussurf-sourcemod-plugins"
+AUSSURF_SM_PLUGINS_REPO_DIR="$SM_PLUGINS_DIR/disabled/aussurf-sourcemod-plugins"
 CUSTOM_DIR="$SERVER_DIR/cstrike/custom"
 TEMPUS_CUSTOM_DIR="$CUSTOM_DIR/tempus"
 MAPS_DIR="$TEMPUS_CUSTOM_DIR/maps"
@@ -16,7 +16,7 @@ cd ~/steamcmd
 cd $SERVER_DIR
 /venv/bin/goh -afi -sc ./cstrike metamod sourcemod stripper accelerator dhooks
 
-cs $SM_PLUGINS_DIR
+cd $SM_PLUGINS_DIR
 rm -f basetriggers.smx nextmap.smx
 
 if [ ! -d $MAPS_DIR ]; then
