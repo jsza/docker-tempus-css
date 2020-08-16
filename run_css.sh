@@ -3,7 +3,7 @@
 SERVER_DIR="/srv/srcds"
 ADDONS_DIR="$SERVER_DIR/cstrike/addons"
 SM_PLUGINS_DIR="$ADDONS_DIR/sourcemod/plugins"
-TEMPUS_SM_PLUGINS_DIR="$SM_PLUGINS_DIR/disabled/tempus-sourcemod-plugins"
+TEMPUS_SM_PLUGINS_DIR="$SM_PLUGINS_DIR/disabled/aussurf-sourcemod-plugins"
 CUSTOM_DIR="$SERVER_DIR/cstrike/custom"
 TEMPUS_CUSTOM_DIR="$CUSTOM_DIR/tempus"
 MAPS_DIR="$TEMPUS_CUSTOM_DIR/maps"
